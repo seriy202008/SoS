@@ -1,0 +1,16 @@
+.container {
+    margin: 0 auto;
+    max-width: $media-1;
+    @include media($media-1) {
+        max-width: $media-2;
+    }
+    @include media($media-2) {
+        max-width: $media-3;
+    }
+    @include media($media-3) {
+        max-width: $media-4;
+    }
+    @include media($media-4) {
+        max-width: $media-5;
+    }
+}

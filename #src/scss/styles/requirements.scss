@@ -1,0 +1,107 @@
+.requirements {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &--container {
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+        justify-content: space-between;
+        position: relative;
+        z-index: 9;
+        padding: var(--block-padding) 0;
+        @include media($media-3) {
+            padding-bottom: 274px;
+            gap: 40px;
+        }
+    }
+
+    &--header {
+    }
+
+    &--body {
+        width: 50%;
+        align-self: flex-start;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 125px);
+
+        border-left: 1px solid rgba(151, 151, 151, 0.5);
+        border-top: 1px solid rgba(151, 151, 151, 0.5);
+        @include media($media-2) {
+            grid-template-rows: repeat(3, 175px);
+        }
+        @include media($media-3) {
+            width: 100%;
+            grid-template-rows: repeat(3, 100px);
+        }
+        @include media($media-4) {
+            grid-template-rows: repeat(3, 125px);
+        }
+    }
+
+    &--cell {
+        &-span {
+            grid-column: span 2;
+        }
+        border-right: 1px solid rgba(151, 151, 151, 0.5);
+        border-bottom: 1px solid rgba(151, 151, 151, 0.5);
+        padding: 15px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    &--name {
+        color: #ffb548;
+
+        font-family: $title;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        @include media($media-3) {
+            font-size: 18px;
+        }
+    }
+
+    &--text {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px; /* 122.222% */
+        @include media($media-3) {
+            font-size: 14px;
+            line-height: 16px; /* 122.222% */
+        }
+    }
+    &--bg {
+        @include media($media-3) {
+            height: 50%;
+            top: auto;
+            bottom: 0;
+        }
+    }
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background: radial-gradient(
+            50% 49.23% at 64.32% 47.1%,
+            rgba(255, 255, 255, 0) 3.36%,
+            rgba(0, 0, 0, 0) 19.22%,
+            #080a0b 99.74%
+        );
+        @include media($media-3) {
+            background: radial-gradient(
+                48.35% 26.39% at 50.49% 75.05%,
+                rgba(255, 255, 255, 0) 3.36%,
+                rgba(0, 0, 0, 0) 46.19%,
+                #080a0b 100%
+            );
+        }
+    }
+}

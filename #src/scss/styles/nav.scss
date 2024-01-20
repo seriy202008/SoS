@@ -1,0 +1,37 @@
+.nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    &--link {
+        color: #fff;
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transition: all 250ms;
+        }
+        &:link,
+        &:visited,
+        &:hover,
+        &:focus,
+        &:active {
+            color: #fff;
+        }
+        &:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    }
+}

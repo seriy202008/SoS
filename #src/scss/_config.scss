@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap");
+
+$font: "Open Sans", Arial, Helvetica, sans-serif;
+$title: "Bebas Neue", "Open Sans", Arial, Helvetica, sans-serif;
+
+$media-1: 1200px;
+$media-2: 1000px;
+$media-3: 760px;
+$media-4: 460px;
+$media-5: 300px;
+
+@mixin media($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+:root {
+    --block-padding: 200px;
+}
+@include media($media-2) {
+    :root {
+        --block-padding: 100px;
+    }
+}
+@include media($media-3) {
+    :root {
+        --block-padding: 40px;
+    }
+}

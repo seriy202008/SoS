@@ -1,0 +1,70 @@
+.dropdown {
+    transition: all 250ms;
+    position: relative;
+    &--btn {
+        width: 32px;
+        color: #fff;
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        background-color: transparent;
+        position: relative;
+        text-align: right;
+        cursor: pointer;
+        &::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 3px;
+            right: -16px;
+            background: {
+                image: url("@img/icon-dropdown.svg");
+                position: center;
+                size: 100%;
+                repeat: no-repeat;
+            }
+            transition: all 250ms;
+        }
+        &._active::after {
+            transform: rotate(180deg);
+        }
+    }
+    &--list {
+        position: absolute;
+        top: 150%;
+        left: 0;
+        width: 55px;
+        display: none;
+        flex-direction: column;
+        padding: 10px 5px;
+        gap: 10px;
+        border-radius: 3px;
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    &--item {
+        color: #fff;
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            color: #ffb548;
+        }
+        &-hidden {
+            display: none;
+        }
+    }
+    &._active &--list {
+        display: flex;
+    }
+    &._active &--btn::after {
+        transform: rotate(180deg);
+    }
+}

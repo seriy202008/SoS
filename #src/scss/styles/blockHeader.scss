@@ -1,0 +1,35 @@
+.blockHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    &--title {
+        font-family: $title;
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        @include media($media-3) {
+            font-size: 33px;
+        }
+    }
+
+    &--subtitle {
+        font-family: $title;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        @include media($media-3) {
+            font-size: 18px;
+        }
+    }
+    &-center {
+        align-items: center;
+    }
+    &-center &--title {
+        text-align: center;
+    }
+    &-center &--subtitle {
+        text-align: center;
+    }
+}

@@ -1,0 +1,112 @@
+.quote {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    &--header {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 64px;
+            background-color: #ffb548;
+            border-radius: 50%;
+            position: absolute;
+            top: 4px;
+            left: 9px;
+            z-index: -1;
+        }
+        @include media($media-3) {
+            gap: 20px;
+            &::before {
+                width: 40px;
+                height: 40px;
+                top: 4px;
+                left: 5px;
+            }
+        }
+    }
+
+    &--photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+        }
+        @include media($media-3) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &--nameblock {
+        flex: 1 1 auto;
+    }
+
+    &--name {
+        color: #ffb548;
+
+        font-family: $title;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        @include media($media-3) {
+            font-size: 21px;
+        }
+    }
+
+    &--prof {
+        color: rgba(255, 255, 255, 0.5);
+
+        text-align: justify;
+        font-size: 18px;
+        line-height: 22px; /* 122.222% */
+        @include media($media-3) {
+            font-size: 14px;
+        }
+    }
+
+    &--text {
+        font-size: 18px;
+        @include media($media-3) {
+            font-size: 14px;
+        }
+    }
+
+    &--date {
+        margin-top: -10px;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+        @include media($media-3) {
+            font-size: 12px;
+        }
+    }
+
+    &--link {
+    }
+
+    &--icon {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        &::before {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        @include media($media-3) {
+            top: -5px;
+            right: -5px;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    &--container {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &--logo {
+        width: 55px;
+        @include media($media-4) {
+            width: 30px;
+        }
+    }
+
+    &--nav {
+        @include media($media-2) {
+            display: none;
+        }
+    }
+
+    &--left {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+    }
+
+    &--dropdown {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-right: 44px;
+        &::after {
+            content: "";
+            display: block;
+            height: 30px;
+            width: 1px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    &--links {
+        display: flex;
+        gap: 17px;
+        .icon-steam::before,
+        .icon-xbox::before {
+            font-size: 30px;
+            color: #ffb548;
+            transition: all 250ms;
+        }
+        .icon-steam:hover::before,
+        .icon-xbox:hover::before {
+            color: #ffa217;
+        }
+        @include media($media-4) {
+            display: none;
+        }
+    }
+
+    &--burger {
+        
+    }
+}

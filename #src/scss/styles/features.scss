@@ -1,0 +1,168 @@
+.features {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &--container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        z-index: 9;
+            padding: var(--block-padding) 0;
+    }
+
+    &--body {
+        height: 75%;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+        justify-content: space-between;
+        padding-right: 100px;
+        @include media($media-2) {
+            width: 60%;
+            padding-right: 0;
+        }
+        @include media($media-3) {
+            gap: 30px;
+        }
+    }
+
+    &--header {
+    }
+
+    &--list {
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        @include media($media-3) {
+            margin-left: 0;
+        }
+    }
+
+    &--item {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+    &--item:first-child {
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            width: 2px;
+            height: calc(100% + 30px);
+            background-color: #fff;
+            position: absolute;
+            top: 9px;
+            left: -41px;
+            @include media($media-3) {
+                top: 3px;
+                left: -22px;
+            }
+        }
+    }
+    &--item:first-child &--name::before {
+        background-color: #fff;
+    }
+
+    &--name {
+        color: #ffb548;
+        font-family: $title;
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 9px;
+            left: -47px;
+            @include media($media-3) {
+                top: 3px;
+                left: -28px;
+            }
+        }
+        @include media($media-3) {
+            font-size: 21px;
+        }
+    }
+
+    &--text {
+        text-align: justify;
+        font-size: 18px;
+        line-height: 22px; /* 122.222% */
+        @include media($media-3) {
+            font-size: 14px;
+            line-height: 16px; /* 122.222% */
+        }
+    }
+
+    &--bg {
+        @include media($media-2) {
+            img {
+                object-position: 80% 30%;
+            }
+        }
+        @include media($media-3) {
+            left: -15%;
+            img {
+                object-position: 50% 50%;
+            }
+        }
+        @include media($media-4) {
+            left: 0%;
+        }
+    }
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background: radial-gradient(38.97% 48.35% at 70.49% 41.61%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 15.11%);
+        @include media($media-3) {
+            background: radial-gradient(
+                38.97% 48.35% at 70.49% 41.61%,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(0, 0, 0, 0) 15.11%
+            );
+        }
+    }
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: radial-gradient(
+            81.01% 53.57% at 30.85% 53.65%,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 0, 0, 0) 19.2%,
+            rgba(4, 5, 6, 0.52) 47.48%,
+            #080a0b 99.74%
+        );
+        @include media($media-3) {
+            background: radial-gradient(
+                20.47% 54.87% at 16% 40.62%,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(4, 5, 6, 0.52) 25.99%,
+                rgba(6, 7, 8, 0.74) 65.03%,
+                #080a0b 99.74%
+            );
+        }
+    }
+}
