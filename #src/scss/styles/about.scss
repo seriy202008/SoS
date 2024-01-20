@@ -86,9 +86,22 @@
             line-height: 16px;
         }
     }
-
-    &--swiper {
+    &--swiperContainer {
         flex: 0 1 45%;
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include media($media-2) {
+            flex: 0 1 auto;
+            width: 432px;
+        }
+        @include media($media-3) {
+            flex: 0 1 auto;
+            width: 285px;
+        }
+    }
+    &--swiper {
         .swiper-slide {
             width: 502px !important;
             height: 610px;
@@ -106,14 +119,6 @@
             @include media($media-3) {
                 width: 255px !important;
             }
-        }
-        @include media($media-2) {
-            min-height: auto;
-            flex: 0 1 auto;
-            margin-left: calc(50% - 201px);
-        }
-        @include media($media-3) {
-            margin-left: calc(50% - 122px);
         }
     }
 
